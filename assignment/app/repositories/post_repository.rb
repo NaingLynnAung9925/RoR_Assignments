@@ -6,6 +6,10 @@ class PostRepository
       @posts =Post.all
     end
 
+    def import(file)
+      Post.import(file)
+    end
+
     def new
       @post = Post.new
     end

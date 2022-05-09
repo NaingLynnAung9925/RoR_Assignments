@@ -1,9 +1,19 @@
+require 'csv'
 class PostsController < ApplicationController
 
   before_action :set_post, only: %i[ show edit update destroy ]
 
   def index
     @posts = PostService.index
+    respond_to do |format|
+      format.html
+      format.csv {send_data @posts.to_csv}
+    end
+  end
+
+  def import
+    PostService.import(params[:file])
+    redirect_to posts_url, notice: "Imported file"
   end
 
   def new

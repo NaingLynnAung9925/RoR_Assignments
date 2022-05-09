@@ -1,4 +1,12 @@
+<%= form_tag import_posts_path, multipart: true, class: "mb-5" do %>
 
+<%= link_to "Export CSV", posts_path(format: :csv), class: 'btn btn-primary text-white' %>
+
+<%= file_field_tag :file %>
+
+<%= submit_tag "Import CSV", class: "btn btn-info" %>
+
+<% end %>
 <table class="table table-striped table-hover">
   <thead class="table-dark">
     <tr>

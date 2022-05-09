@@ -10,6 +10,10 @@ class PostService
       PostRepository.new
     end
 
+    def import(file)
+      PostRepository.import(file)
+    end
+
     def save(post)
       isSave = PostRepository.create(post)
     end
