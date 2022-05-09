@@ -1,0 +1,32 @@
+<%= form_for @post do |form| %>
+
+ <% if @post.errors.any? %>
+    <div id="error_explanation">
+      
+      <ul>
+        <% @post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :status %>
+    <%=form.number_field :status, value: 1, class: "form-control" %>
+  </div>
+  <br>
+  <br>
+    <%= form.submit class: "btn btn-primary" %>
+
+<% end %>

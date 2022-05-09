@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<div class="m-5">
+<h3 class="mb-3">
+<strong>Title:</strong>
+<%= @post.title %></h3>
+<h5>
+<strong>Description:</strong>
+ <%= @post.description %></h5>
+
+
+</div>
+
+<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-secondary btn-sm text-white" %>
+<%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-sm btn-danger text-white" %>
+<%= link_to 'Back', posts_path, class: "btn btn-dark btn-sm text-white" %>

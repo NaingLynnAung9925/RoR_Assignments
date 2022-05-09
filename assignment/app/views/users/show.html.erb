@@ -1,0 +1,13 @@
+
+<h5>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</h5>
+
+<h5 class= "mb-5">
+  <strong>Email:</strong>
+  <%= @user.email %>
+</h5>
+
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-outline-secondary btn-sm "%> |
+<%= link_to 'Back', users_path, class: "btn btn-outline-dark btn-sm" %>
