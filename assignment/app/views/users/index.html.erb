@@ -1,23 +1,71 @@
+<form class="col" style="margin-top:5rem;" method="GET" action="/search">
+  <div class="row align-items-start float-start" >
+    <div class="col-md-3">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name"> 
+    </div>
+
+    <div class="col-md-3">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" name="address"> 
+    </div>
+
+    <div class="col-md-3 me-5">
+      <label for="user_type">user type</label>
+      <input type="text" class="form-control" id="user_type" name="user_type"> 
+    </div>
+
+    <div class="col-md-3 mt-3">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email"> 
+    </div>
+
+    <div class="col-md-3 mt-3">
+      <label for="birthday">date of birth</label>
+      <input type="search" class="form-control" id="birthday" name="birthday"> 
+    </div>
+
+    <div class="col-md-3 mt-3">
+      <label for="phone">phone</label>
+      <input type="number" class="form-control" id="phone" name="phone"> 
+    </div>
+
+  </div>
+    <div class="col float-end me-5" style="margin-top:-60px">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+
 <table class="table" >
   <thead>
     <tr>
       <th>ID</th>
       <th>Name</th>
       <th>Email</th>
+      <th>User_Type</th>
+      <th>Phone Number</th>
+      <th>Address</th>
+      <th>Birthday</th>
     </tr>
   </thead>
 
   <tbody>
+  <% if @users %>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.id %></td>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
+        <td><%= user.user_type %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.address %></td>
+        <td><%= user.birthday %></td>
         <td><%= link_to 'Show', user, class: "btn btn-outline-primary btn-sm" %></td>
         <td><%= link_to 'Edit', edit_user_path(user), class: "btn btn-outline-primary btn-sm" %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary btn-sm" %></td>
       </tr>
     <% end %>
+  <% end %>
   </tbody>
 </table>
 

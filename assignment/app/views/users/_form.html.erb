@@ -11,26 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field col-md-3">
     <%= form.label :name %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field col-md-3">
     <%= form.label :email %>
     <%= form.text_field :email, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field col-md-3">
     <%= form.label :password %>
     <%= form.password_field :password, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field col-md-3">
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation, class: "form-control" %>
   </div>
 
+  <div class="field col-md-3">
+    <%= form.label :user_type %>
+    <%= form.select :user_type, [['Please select a user', nil], 'Super User', 'Normal User'], {}, {class: 'form-control'}  %>
+
+  </div>
+
+  <div class="field col-md-3">
+    <%= form.label :phone %>
+    <%= form.number_field :phone, class: "form-control" %>
+  </div>
+
+  <div class="field col-md-3">
+    <%= form.label :address %>
+    <%= form.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="col-md-3">
+    <%= form.label :birthday %>
+    <%= form.date_field :birthday, class: "form-control" %>
+  </div>
+  <%= current_user %>
   <div class="actions">
     <%= form.submit class: "btn btn-primary mt-3" %>
   </div>

@@ -6,6 +6,34 @@ class UsersController < ApplicationController
    @users = UserService.index
   end
 
+  def search
+    if params[:name].present?
+      @q = params[:name]
+      @users = User.where("name LIKE? ", @q)
+
+    elsif params[:address].present?
+      @q = params[:address]
+      @users = User.where("address LIKE?", @q)
+
+    elsif  params[:user_type].present?
+      @q = params[:user_type]
+      @users = User.where("user_type LIKE?",@q)
+
+    elsif params[:email].present?
+      @q = params[:email]
+      @users = User.where("email LIKE?", @q)
+
+    elsif params[:brithday].present?
+      @q = params[:brithday]
+      @users = User.where("birthday LIKE?", "%#{@q}%")
+
+    elsif params[:phone].present?
+      @q = params[:phone]
+      @users = User.where("phone LIKE? ", @q)
+    end
+    render "index"
+  end
+
   # GET /users/1 or /users/1.json
   def show
   end
@@ -29,8 +57,9 @@ class UsersController < ApplicationController
       else
         render :new, notice: "Existing Email"
       end
-
+  
   end
+
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
@@ -59,6 +88,7 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :user_type, :phone, :address, :birthday)
     end
+
 end

@@ -1,12 +1,27 @@
 
-<h5>
+<h5 class="mb-3">
   <strong>Name:</strong>
   <%= @user.name %>
 </h5>
 
-<h5 class= "mb-5">
+<h5 class= "mb-3">
   <strong>Email:</strong>
   <%= @user.email %>
+</h5>
+
+<h5 class= "mb-3">
+  <strong>Phone:</strong>
+  <%= @user.phone %>
+</h5>
+
+<h5 class= "mb-3">
+  <strong>Address:</strong>
+  <%= @user.address %>
+</h5>
+
+<h5 class= "mb-5">
+  <strong>Birthday:</strong>
+  <%= @user.birthday %>
 </h5>
 
 <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-outline-secondary btn-sm "%> |
