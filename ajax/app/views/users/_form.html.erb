@@ -1,0 +1,43 @@
+<%= form_with(model: user, local: false) do |form| %>
+  <div class="modal-body">
+    <div id="errorArea"></div>
+   
+
+    <div class="col">
+      <%= form.label :name %>
+      <%= form.text_field :name , class: "form-control" %>
+    </div>
+
+    <div class="col">
+      <%= form.label :mobile %>
+      <%= form.text_field :mobile, class: "form-control" %>
+    </div>
+
+    <div class="col">
+      <%= form.label :email %>
+      <%= form.text_field :email, class: "form-control" %>
+    </div>
+
+    <div class="col">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: "form-control" %>
+    </div>
+
+    <div class="col">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, class: "form-control" %>
+    </div>
+
+    <div class="col">
+      <%= form.label :address %>
+      <%= form.text_field :address, class: "form-control" %>
+    </div>
+ 
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary close-modal" data-bs-dismiss="modal">Close</button>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+  
+  
+<% end %>

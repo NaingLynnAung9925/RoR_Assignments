@@ -1,0 +1,22 @@
+<p class="fs-5">
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p class="fs-5 mt-5">
+  <strong>Mobile:</strong>
+  <%= @user.mobile %>
+</p>
+
+<p class="fs-5 mt-5">
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p class="fs-5 my-5">
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-outline-secondary btn-sm" %> |
+<%= link_to 'Back', users_path, class: "btn btn-sm btn-outline-dark" %>

@@ -1,0 +1,20 @@
+<tr id="userRow_<%= user.id %>">
+  <td class="fs-6"><%= user.id %></td>
+  <td class="fs-6"><%= user.name %></td>
+  <td class="fs-6"><%= user.mobile %></td>
+  <td class="fs-6"><%= user.email %></td>
+  <td class="fs-6"><%= user.address %></td>
+  <td>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Operations
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><%= link_to 'Show', user, class: 'dropdown-item', data: { bs_toggle: "modal", bs_target: '#showUserModal', remote: true } %></li>
+        <li><%= link_to 'Edit', edit_user_path(user), class: "btn btn-secondary btn-sm dropdown-item", data: {bs_toggle: 'modal', bs_target: '#editUserModal', remote: true} %></li>
+        <li><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: "btn btn-danger btn-sm dropdown-item delete" %></li>
+      </ul>
+  </div>
+  </td>
+
+</tr>

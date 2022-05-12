@@ -1,0 +1,6 @@
+<% if @post.errors.any? %>
+  $("#errorArea").html("<%= escape_javascript render('error', post: @post) %>")
+<% else %>
+  $("#postsTable").append("<%= escape_javascript render('post_row', post: @post) %>");
+  $(".close-modal").click();
+<% end %>

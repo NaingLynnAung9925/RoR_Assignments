@@ -5,7 +5,8 @@
   <br>
   <br>
   <%= link_to 'New Post', new_post_path, class: "btn btn-primary btn-sm text-white" %>
-    <%= link_to 'List of Posts', posts_path, class: "btn btn-warning btn-sm text-white" %>
+  <%= link_to 'List of Posts', posts_path, class: "btn btn-warning btn-sm text-white" %>
+  <%= link_to 'List of Users', users_path, class: "btn btn-warning text-white ms-4" %>
 <% else %>
 <h1 class="mb-4">Register Here</h1>
 
@@ -14,7 +15,7 @@
 <br>
 <br>
 <br>
-  <%= link_to 'List of Users', users_path, class: "btn btn-warning text-white ms-4" %>
+
 
 <% end %>
 

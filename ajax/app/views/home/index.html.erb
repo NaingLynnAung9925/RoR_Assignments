@@ -1,0 +1,16 @@
+<% if current_user %>
+  Logged in as <span style= "color:blue;"><%= current_user.email %></span>.
+  <%= link_to 'Log Out', logout_path, class: "btn btn-outline-danger btn-sm" %>
+<br>
+<br>
+  <%= link_to 'List of Users', users_path, class: "btn btn-warning btn-sm text-white " %>
+  <%= link_to 'List of Posts', posts_path, class: "btn btn-warning btn-sm text-white " %>
+  <%= link_to "New Post", new_post_path, class: "btn btn-primary btn-sm text-white" %>
+
+<% else %>
+<h1 class="mb-5">Register here</h1>
+ <%= link_to 'Sign Up', signup_path, class: "btn btn-primary text-white" %> or
+ <%= link_to 'Log In', login_path, class: "btn btn-success text-white" %>
+<% end %>
+
+

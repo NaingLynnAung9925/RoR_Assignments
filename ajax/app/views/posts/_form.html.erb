@@ -1,0 +1,30 @@
+<%= form_with(model: post, local: false) do |form| %>
+
+  <div class="modal-body">
+  <div id="errorArea">
+
+  </div>
+
+
+    <div class="col">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="col my-4">
+      <%= form.label :description %>
+      <%= form.text_field :description, class: "form-control" %>
+    </div>
+
+    <div class="col mb-5">
+      <%= form.label :status %>
+      <%= form.check_box :status %>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary close-modal" data-bs-dismiss="modal">Close</button>
+      <%= form.submit class: "btn btn-primary text-white" %>
+    </div>
+
+ 
+<% end %>

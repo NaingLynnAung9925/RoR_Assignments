@@ -1,0 +1,21 @@
+<tr id="postRow_<%= post.id%>">
+  <td class="fs-6"><%= post.id %></td>
+  <td class="fs-6"><%= post.title %></td>
+  <td class="fs-6"><%= post.description %></td>
+  <td class="fs-6"><%= post.status %></td>
+  <td class="fs-6"><%= post.user_id %></td>
+  <td class="fs-6"><%= post.created_at %></td>
+  <td class="fs-6"><%= post.updated_at %></td>
+  <td>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Operations
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><%= link_to 'Show', post, class: 'dropdown-item', data: { bs_toggle: "modal", bs_target: '#showPostModal', remote: true } %></li>
+        <li><%= link_to 'Edit', edit_post_path(post), class: "btn btn-secondary btn-sm dropdown-item", data: {bs_toggle: 'modal', bs_target: '#editPostModal', remote: true} %></li>
+        <li><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: "btn btn-danger btn-sm dropdown-item" %></li>
+      </ul>
+    </div>
+  </td>
+</tr>

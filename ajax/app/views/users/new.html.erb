@@ -1,0 +1,41 @@
+<h1>New User</h1>
+
+<%= form_with(model: @user) do |form| %>
+
+    <div id="errorArea"></div>
+   
+    <div class="col-md-3">
+      <%= form.label :name %>
+      <%= form.text_field :name , class: "form-control" %>
+    </div>
+
+    <div class="col-md-3">
+      <%= form.label :mobile %>
+      <%= form.text_field :mobile, class: "form-control" %>
+    </div>
+
+    <div class="col-md-3">
+      <%= form.label :email %>
+      <%= form.text_field :email, class: "form-control" %>
+    </div>
+
+    <div class="col-md-3">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: "form-control" %>
+    </div>
+
+    <div class="col-md-3">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, class: "form-control" %>
+    </div>
+
+    <div class="col-md-3 ">
+      <%= form.label :address %>
+      <%= form.text_field :address, class: "form-control" %>
+    </div>
+
+      <%= form.submit class: "btn btn-primary my-4" %>
+
+<% end %>
+
+<%= link_to 'Back', root_url, class: "btn btn-dark text-white" %>

@@ -1,0 +1,17 @@
+<p class="fs-5">
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p class="fs-5 mt-5">
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+<p class="fs-5 my-5">
+  <strong>Status:</strong>
+  <%= @post.status %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post), class: "btn btn-outline-secondary" %> |
+<%= link_to 'Back', posts_path, class: "btn btn-outline-dark" %>
