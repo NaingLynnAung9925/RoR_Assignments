@@ -4,6 +4,9 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.all
+    author = current_user
+    PostMailer.post_list(author,@posts).deliver_now
+
   end
 
   # GET /posts/1 or /posts/1.json
@@ -26,6 +29,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        author = @post.user
+        PostMailer.post_confirmation(author,@post).deliver_now
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
         format.js
@@ -55,7 +60,8 @@ class PostsController < ApplicationController
   # DELETE /posts/1 or /posts/1.json
   def destroy
     @post.destroy
-
+    author = @post.user
+    PostMailer.post_delete(author,@post).deliver_now
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
